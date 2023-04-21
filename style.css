@@ -1,4 +1,16 @@
-body{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 15px;
+}
+
+.container{
     background-color: blue;
     display: flex;
     align-items: center;
