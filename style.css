@@ -1,0 +1,30 @@
+body{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.grid{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+
+.cell{
+    height: 60px;
+    width: 60px;
+    outline: 2px solid black;
+    background-color: crimson;
+}
+
+.clicked{
+    background-color: blue;
+}
+
+.invisible{
+    display: none;
+}
