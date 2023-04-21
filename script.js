@@ -5,21 +5,23 @@ startBtn.addEventListener("click", function () {
     const eleGrid = document.querySelector(".grid");
     const GridWidth = eleGrid.clientWidth
     console.log(GridWidth)
+    let cellWidth = 
     
-	const level = document.querySelector("#level").value;
-	if (level == "easy") {
-		cellWidth = GridWidth / 7;
-
-	} else if (level == "mid") {
-		cellWidth = GridWidth / 8;
-
-	} else if (level == "hard") {
-		cellWidth = GridWidth / 10;
-	}
-
 	eleGrid.innerHTML = "";
-	for (let i = 1; i <= cellWidth; i++) {
-		eleGrid.innerHTML += `<div class="cell">${i}</div>`;
+	for (let i = 1; i <= 100; i++) {
+
+        eleGrid.innerHTML += `<div class="cell">${i}</div>`;
+
+        const level = document.querySelector("#level").value;
+        if (level == "easy") {
+            cellWidth = GridWidth / 7 + 'px';
+    
+        } else if (level == "mid") {
+            cellWidth = GridWidth / 8;
+    
+        } else if (level == "hard") {
+            cellWidth = GridWidth / 10;
+        }
 	}
 
 	const listCell = document.querySelectorAll(".cell");
