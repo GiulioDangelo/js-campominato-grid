@@ -1,36 +1,50 @@
 const startBtn = document.querySelector(".start");
 
 startBtn.addEventListener("click", function () {
-    
-    const eleGrid = document.querySelector(".grid");
-    const GridWidth = eleGrid.clientWidth
-    console.log(GridWidth)
-    let cellWidth = 
-    
-	eleGrid.innerHTML = "";
-	for (let i = 1; i <= 100; i++) {
+	const eleGrid = document.querySelector(".grid");
 
-        eleGrid.innerHTML += `<div class="cell">${i}</div>`;
 
-        const level = document.querySelector("#level").value;
-        if (level == "easy") {
-            cellWidth = GridWidth / 7 + 'px';
-    
-        } else if (level == "mid") {
-            cellWidth = GridWidth / 8;
-    
-        } else if (level == "hard") {
-            cellWidth = GridWidth / 10;
-        }
+	const level = document.querySelector("#level").value;
+	let cellWidth = 100;
+	if (level == "easy") {
+		cellWidth = 49;
+		// listCell.classList.toggle("easy");
+	} else if (level == "mid") {
+		cellWidth = 81;
+	} else if (level == "hard") {
+		cellWidth = 100;
 	}
 
+
+	eleGrid.innerHTML = "";
+	for (let i = 1; i <= cellWidth; i++) {
+		eleGrid.innerHTML += `<div class="cell">${i}</div>`;
+	}
+
+
+	// TODO:
 	const listCell = document.querySelectorAll(".cell");
 
 	for (let i = 0; i < listCell.length; i++) {
-		const cell = listCell[i];
+		let cell = listCell[i];
 		cell.addEventListener("click", colorCell);
 	}
+
+
+	if (level == "easy") {
+		let easy = document.querySelectorAll(".cell");
+		for (let i = 0; i < easy.length; i++) {
+			easy[i].classList.add("easy");
+		}
+	} else if (level == "mid") {
+		let mid = document.querySelectorAll(".cell");
+		for (let i = 0; i < mid.length; i++) {
+			mid[i].classList.add("mid");
+		}
+	}
+
 });
+
 
 
 
@@ -38,4 +52,5 @@ startBtn.addEventListener("click", function () {
 
 function colorCell() {
 	this.classList.toggle("clicked");
+	console.log("clickeddddd");
 }
