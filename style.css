@@ -107,3 +107,8 @@ footer{
 a{
     margin-left: 10px;
 }
+
+/* hover effect */
+#level:hover,.start:hover,.cell:hover{
+    cursor: pointer;
+}
